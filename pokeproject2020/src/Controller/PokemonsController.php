@@ -28,6 +28,11 @@ class PokemonsController extends AppController
         $this->set(compact('pokemons'));
     }
 
+    public function tableauDeBord()
+    {
+        echo "test";
+    }
+
     /**
      * View method
      *
