@@ -175,7 +175,8 @@ svg {
   vertical-align: middle; }
 
 table {
-  border-collapse: collapse; }
+  border-collapse: collapse;
+  }
 
 caption {
   padding-top: 0.75rem;
@@ -7857,7 +7858,7 @@ div.snorlax {
     transform: translateY(-10px); }
 
 img {
-  max-height: 150px;
+
   margin: auto;
   display: inline-block; }
 
