@@ -4,8 +4,12 @@
  * @var \App\Model\Entity\Pokemon[]|\Cake\Collection\CollectionInterface $pokemons
  */
 ?>
+
+
 <div class="pokemons index content">
     <h3><?= __('Pokemons') ?></h3>
+
+     <h3> <?= $this->Html->link("Dashboard", ['action' => 'tableauDeBord']); ?> </h3>
 
     <div class="row">
         <?php foreach ($pokemons as $pokemon) : ?>
