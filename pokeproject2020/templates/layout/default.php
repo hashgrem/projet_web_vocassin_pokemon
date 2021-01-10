@@ -57,6 +57,10 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                 <li class="nav-item active">
                     <?= $this->Html->link(__('Pokemons'), ['controller' => 'Pokemons', 'action' => 'index'], ['class' => "nav-link"]) ?>
                 </li>
+                <li class="nav-item active">
+                  <?=  $this->Html->link(__('Tableau de bord'), ['controller' => 'Pokemons', 'action' => 'tableauDeBord'], ['class' => "nav-link"])
+                            // Ajout du bouton 'Tableau de Bord' en haut de chaque page. ?>
+                </li>
             </ul>
         </div>
     </nav>
