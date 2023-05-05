@@ -9,7 +9,7 @@
 <div class="pokemons index content">
     <h3><?= __('Pokemons') ?></h3>
 
-     <h3> <?= $this->Html->link("Dashboard", ['action' => 'tableauDeBord']); ?> </h3>
+     <h3> <?= $this->Html->link("Dashboard", ['action' => 'tableauDeBord']);    //Lien vers le Tableau de Bord. ?> </h3>
 
     <div class="row">
         <?php foreach ($pokemons as $pokemon) : ?>
