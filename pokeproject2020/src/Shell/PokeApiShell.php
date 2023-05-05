@@ -41,7 +41,7 @@ class PokeApiShell extends Shell
         $this->verbose('Loading the 5th generation !');
         $this->_loadGeneration(494, 649);
         $this->verbose('Loading the 6th generation !');
-        $this->_loadGeneration(650, 721);
+        $this->_loadGeneration(650, 721); 
         $this->verbose('Loading the 7th generation !');
         $this->_loadGeneration(722, 809);
         $this->verbose('Loading the 8th generation !');
