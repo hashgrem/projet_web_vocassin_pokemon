@@ -4,6 +4,9 @@
  * @var \App\Model\Entity\Pokemon $pokemon
  *
  */
+
+use Cake\ORM\Table;
+
 ?>
 <div class="row">
     <aside class="column">
@@ -15,26 +18,29 @@
     </aside>
     <div class="column-responsive column-80">
         <div class="pokemons view content">
-            <h3><?= h($pokemon->name) ?></h3>
+            <h3 class="card__name" style="text-decoration: none; font-size:50px;"><?= h($pokemon->name) ?></h3>
+              <div align='center' style="margin:40px 0 0 25px;">
+            
             <?php
             //Affichage des 2 types
             foreach ($pokemon->pokemon_types as $pokemonTypes)
               {
-
+                $type = $pokemonTypes['type']['name'];
                ?>
-              <tr>
-                <td>
 
-                  <h4 class="type"><?php  echo $pokemonTypes['type']['name']; ?></h4>
+               <div class="d-inline-block">
+                    <h4 style="position:relative;" class="card__type <?=$type?> card--<?=$type?>"> <?=$type?></h4>
+                </div>
 
-                </td>
-
-              </tr>
               <?php
             }
             ?>
-
+            </div>
             <table>
+              <thead>
+                <th>Name</th>
+                <th>Stats</th>
+              </thead>
                 <?php
 
                 if (!empty($pokemon->pokemon_stats))
@@ -49,7 +55,12 @@
                         <tr>
                           <td>
                             <?php
-                              echo $pokemonStats['stat']['name'];
+                              if ($pokemonStats['stat']['name'] == 'special-attack')
+                                echo "SPE-ATTACK";
+                              else if ($pokemonStats['stat']['name'] == 'special-defense')
+                                echo "SPE-DEFENSE";
+                              else
+                                echo strtoupper($pokemonStats['stat']['name']);
                             ?>
                           </td>
                           <td><?= h($pokemonStats->value) ?></td>
@@ -66,7 +77,7 @@
               //Affichage de l'image
               $url = $pokemon['default_front_sprite_url'];
               ?>
-              <img class="default_front" src="<?php echo $url; ?>">
+              <img class="default_front" style="width:250px;margin-right:30px !important;" src="<?php echo $url; ?>">
 
               <?php
 
@@ -82,10 +93,7 @@
                   <img class="carousel" id="front" src="<?php echo $url; ?>">
                   <img class="carousel" id="shiny" src="<?php echo $url_shiny; ?>">
                   <img class="carousel" id="back"  src="<?php echo $url_back; ?>">
-
                 </figure>
-
-              </div>
               <!-- fin Carousel -->
 
             </div>
